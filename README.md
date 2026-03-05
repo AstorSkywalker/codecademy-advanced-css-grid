@@ -160,7 +160,7 @@ On mobile, all items stack vertically while maintaining their semantic areas.
 ## Resources
 - [MDN: grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
 - [CSS Tricks: Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Codecademy CSS Grid Course](https://codecademy.com)
+- [Codecademy Advanced CSS Grid Lesson](https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-improved-styling-with-css/tracks/fecj-22-making-a-website-responsive/modules/wdcp-22-learn-css-grid-5f3cef21-7a34-415b-beef-3207850da2ce/lessons/advanced-css-grid/exercises/introduction)
 - [Adobe Color Wheel](https://color.adobe.com/) - Color harmony and palette generator
 
 ---
