@@ -53,7 +53,8 @@ grid-template-areas:
   - `feature3`: column 3, row 3 (bottom-right)
   - `wide`: spans columns 1-2, row 3 (bottom-wide area)
 
-### Bento Box Example
+### Live Example
+You can see this bento box layout in action by opening `index.html` in your browser. The layout demonstrates how `grid-template-areas` creates an asymmetrical, visually appealing design.
 
 **HTML:**
 ```html
