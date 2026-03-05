@@ -9,6 +9,9 @@ body {
 
 .bento-container {
     display: grid;
+    border: solid 1px #ddd;
+    border-radius: 20px;
+    background-color: rgb(22, 22, 49);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 200px);
     gap: 1rem;
