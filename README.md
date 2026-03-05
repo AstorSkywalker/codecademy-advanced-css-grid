@@ -2,6 +2,8 @@
 
 A comprehensive learning repository for mastering Advanced CSS Grid properties and techniques from Codecademy.
 
+**Repository:** [https://github.com/AstorSkywalker/codecademy-advanced-css-grid](https://github.com/AstorSkywalker/codecademy-advanced-css-grid)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Bento Box Layout](#bento-box-layout)
