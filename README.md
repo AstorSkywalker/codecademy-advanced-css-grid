@@ -14,6 +14,45 @@ This repository documents my learning journey through Advanced CSS Grid. CSS Gri
 
 Bento boxes are a popular modern layout pattern inspired by Japanese bento food containers. They use CSS Grid with `grid-template-areas` to create visually appealing, asymmetrical layouts with items of different sizes.
 
+### Visual Layout Diagram
+
+Here's how our bento box layout will look:
+
+```
+┌─────────────────┬─────────────┐
+│                 │  Feature 1  │
+│                 │             │
+│    Hero Image   ├─────────────┤
+│                 │  Feature 2  │
+│                 │             │
+├─────────────────┴─────────────┤
+│                               │
+│         Wide Content          │
+│                               │
+└───────────────────────────────┘
+```
+
+### Grid Template Areas Explained
+
+The `grid-template-areas` property defines named areas in our grid:
+
+```css
+grid-template-areas:
+  "hero hero feature1"    /* Row 1: hero spans 2 columns, feature1 takes 1 */
+  "hero hero feature2"    /* Row 2: hero spans 2 columns, feature2 takes 1 */
+  "wide wide feature3";   /* Row 3: wide spans 2 columns, feature3 takes 1 */
+```
+
+**What this creates:**
+- **3 columns**: `repeat(3, 1fr)` - three equal-width columns
+- **3 rows**: `repeat(3, 200px)` - three 200px-high rows
+- **Named areas**:
+  - `hero`: spans columns 1-2, rows 1-2 (large top-left area)
+  - `feature1`: column 3, row 1 (top-right)
+  - `feature2`: column 3, row 2 (middle-right)
+  - `feature3`: column 3, row 3 (bottom-right)
+  - `wide`: spans columns 1-2, row 3 (bottom-wide area)
+
 ### Bento Box Example
 
 **HTML:**
@@ -24,7 +63,6 @@ Bento boxes are a popular modern layout pattern inspired by Japanese bento food 
   <div class="item item-3">Feature 2</div>
   <div class="item item-4">Feature 3</div>
   <div class="item item-5">Wide Content</div>
-  <div class="item item-6">Call to Action</div>
 </div>
 ```
 
@@ -79,11 +117,6 @@ Bento boxes are a popular modern layout pattern inspired by Japanese bento food 
 .item-5 {
   grid-area: wide;
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.item-6 {
-  grid-area: cta;
-  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
 }
 ```
 
