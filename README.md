@@ -161,6 +161,7 @@ On mobile, all items stack vertically while maintaining their semantic areas.
 - [MDN: grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
 - [CSS Tricks: Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Codecademy CSS Grid Course](https://codecademy.com)
+- [Adobe Color Wheel](https://color.adobe.com/) - Color harmony and palette generator
 
 ---
 Last updated: March 4, 2026
