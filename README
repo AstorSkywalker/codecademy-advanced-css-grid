@@ -28,6 +28,68 @@ Brief overview of fundamental grid concepts:
 - `grid-template-areas` - Create named grid areas
 - `grid-template` - Shorthand property
 
+#### grid-template-areas Example
+`grid-template-areas` allows you to define named grid areas, making layouts more readable and maintainable.
+
+**HTML:**
+```html
+<div class="container">
+  <header>Header</header>
+  <nav>Navigation</nav>
+  <main>Main Content</main>
+  <aside>Sidebar</aside>
+  <footer>Footer</footer>
+</div>
+```
+
+**CSS:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  gap: 1rem;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #3498db;
+  padding: 1rem;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #2c3e50;
+}
+
+main {
+  grid-area: main;
+  background-color: #ecf0f1;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #95a5a6;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #34495e;
+  padding: 1rem;
+}
+```
+
+**Key Points:**
+- Use string values with area names in `grid-template-areas`
+- Each row represents a line of the grid (spaces between names)
+- Use the `grid-area` property to assign items to named areas
+- This creates a visual representation of your layout in the CSS
+
 ### Item Placement
 - `grid-column` - Span columns
 - `grid-row` - Span rows
