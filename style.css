@@ -1,0 +1,67 @@
+/* Bento Box Layout - CSS Grid Template Areas Example */
+
+.bento-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    grid-template-areas:
+        "hero hero feature1"
+        "hero hero feature2"
+        "wide wide feature3";
+}
+
+.item {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Assign areas */
+.item-1 {
+    grid-area: hero;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.item-2 {
+    grid-area: feature1;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.item-3 {
+    grid-area: feature2;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.item-4 {
+    grid-area: feature3;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.item-5 {
+    grid-area: wide;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .bento-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "hero"
+            "feature1"
+            "feature2"
+            "feature3"
+            "wide";
+    }
+}
