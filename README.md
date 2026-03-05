@@ -2,7 +2,8 @@
 
 A comprehensive learning repository for mastering Advanced CSS Grid properties and techniques from Codecademy.
 
-**Repository:** [https://github.com/AstorSkywalker/codecademy-advanced-css-grid](https://github.com/AstorSkywalker/codecademy-advanced-css-grid)
+**Repository:** [https://github.com/AstorSkywalker/codecademy-advanced-css-grid](https://github.com/AstorSkywalker/codecademy-advanced-css-grid)  
+**Live Demo:** [https://astorskywalker.github.io/codecademy-advanced-css-grid](https://astorskywalker.github.io/codecademy-advanced-css-grid)
 
 ## Table of Contents
 - [Introduction](#introduction)
