@@ -7,18 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bento-container">
-        <div class="item item-1">Hero Image</div>
-        <div class="item item-2">Feature 1</div>
-        <div class="item item-3">Feature 2</div>
-        <div class="item item-4">Feature 3</div>
-        <div class="item item-5">Wide Content</div>
-    </div>
+    <header class="page-header">
+        <h1>Advanced CSS Grid Layouts</h1>
+        <p>Practice examples for named areas, overlapping items, and item alignment.</p>
+        <nav class="page-nav" aria-label="Example navigation">
+            <a href="#bento-layout">Bento Box Layout</a>
+            <a href="#overlapping-layout">Overlapping Grid Items</a>
+            <a href="justified.html">Justify Items Example</a>
+        </nav>
+    </header>
 
-    <div class="overlapping-container">
-        <div class="item item-6">Item 6</div>
-        <div class="item item-7">Item 7</div>
-        <div class="item item-8">Overlapping Item 8</div>
-    </div>
+    <main class="page-content">
+        <section class="demo-section" id="bento-layout" aria-labelledby="bento-title">
+            <div class="section-heading">
+                <h2 id="bento-title">1. Bento Box Layout</h2>
+                <p>A named-area grid with a large hero panel, stacked feature cards, and a wide footer card.</p>
+            </div>
+            <div class="bento-container">
+                <div class="item item-1">Hero Image</div>
+                <div class="item item-2">Feature 1</div>
+                <div class="item item-3">Feature 2</div>
+                <div class="item item-4">Feature 3</div>
+                <div class="item item-5">Wide Content</div>
+            </div>
+        </section>
+
+        <section class="demo-section" id="overlapping-layout" aria-labelledby="overlap-title">
+            <div class="section-heading">
+                <h2 id="overlap-title">2. Overlapping Grid Items</h2>
+                <p>A coordinate-based grid showing how placement lines and stacking order can create layered layouts.</p>
+            </div>
+            <div class="overlapping-container">
+                <div class="item item-6">Item 6</div>
+                <div class="item item-7">Item 7</div>
+                <div class="item item-8">Overlapping Item 8</div>
+            </div>
+        </section>
+
+        <section class="demo-section demo-link" aria-labelledby="justify-title">
+            <div class="section-heading">
+                <h2 id="justify-title">3. Justify Items</h2>
+                <p>A separate page focused on how `justify-items` controls horizontal alignment inside each grid cell.</p>
+            </div>
+            <a class="demo-button" href="justified.html">Open the Justify Items Example</a>
+        </section>
+    </main>
 </body>
 </html>

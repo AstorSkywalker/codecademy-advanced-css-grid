@@ -1,65 +1,78 @@
 # Codecademy Advanced CSS Grid
 
-A comprehensive learning repository for mastering Advanced CSS Grid properties and techniques from Codecademy.
+A compact learning repository for practicing advanced CSS Grid properties and layout techniques from Codecademy.
 
 **Repository:** [https://github.com/AstorSkywalker/codecademy-advanced-css-grid](https://github.com/AstorSkywalker/codecademy-advanced-css-grid)  
 **Live Demo:** [https://astorskywalker.github.io/codecademy-advanced-css-grid](https://astorskywalker.github.io/codecademy-advanced-css-grid)
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Layouts Included](#layouts-included)
 - [Bento Box Layout](#bento-box-layout)
+- [Overlapping Grid Items](#overlapping-grid-items)
+- [Justify Items Example](#justify-items-example)
+- [Project Structure](#project-structure)
 - [Resources](#resources)
 
 ## Introduction
-This repository documents my learning journey through Advanced CSS Grid. CSS Grid is a powerful layout system for creating complex, responsive designs.
+
+This repository documents a learning journey through advanced CSS Grid. The project focuses on three practical patterns that are useful when building modern responsive interfaces:
+
+- Named grid areas for structured layouts
+- Overlapping items with explicit grid line placement
+- Horizontal alignment inside grid cells with `justify-items`
+
+## Layouts Included
+
+### 1. Bento Box Layout
+
+The main demo uses `grid-template-areas` to create a bento-style layout with a hero panel, supporting feature cards, and a wide content area.
+
+### 2. Overlapping Grid Items
+
+The second demo uses line-based placement and `z-index` to show how grid items can overlap while still being controlled by the grid.
+
+### 3. Justify Items Example
+
+The secondary page uses narrow child items to make the effect of `justify-items: start` clearly visible.
 
 ## Bento Box Layout
 
-Bento boxes are a popular modern layout pattern inspired by Japanese bento food containers. They use CSS Grid with `grid-template-areas` to create visually appealing, asymmetrical layouts with items of different sizes.
+Bento layouts are visually asymmetrical but still highly organized. CSS Grid makes them easier to build by naming layout regions with `grid-template-areas`.
 
 ### Visual Layout Diagram
 
-Here's how our bento box layout will look:
-
-```
-┌─────────────────┬─────────────┐
-│                 │  Feature 1  │
-│                 │             │
-│    Hero Image   ├─────────────┤
-│                 │  Feature 2  │
-│                 │             │
-├─────────────────┴─────────────┤
-│                               │
-│         Wide Content          │
-│                               │
-└───────────────────────────────┘
+```text
++-----------------+-------------+
+|                 |  Feature 1  |
+|                 |             |
+|    Hero Image   +-------------+
+|                 |  Feature 2  |
+|                 |             |
++-----------------+-------------+
+|   Wide Content  |  Feature 3  |
++-----------------+-------------+
 ```
 
-### Grid Template Areas Explained
-
-The `grid-template-areas` property defines named areas in our grid:
+### Grid Template Areas
 
 ```css
 grid-template-areas:
-  "hero hero feature1"    /* Row 1: hero spans 2 columns, feature1 takes 1 */
-  "hero hero feature2"    /* Row 2: hero spans 2 columns, feature2 takes 1 */
-  "wide wide feature3";   /* Row 3: wide spans 2 columns, feature3 takes 1 */
+  "hero hero feature1"
+  "hero hero feature2"
+  "wide wide feature3";
 ```
 
-**What this creates:**
-- **3 columns**: `repeat(3, 1fr)` - three equal-width columns
-- **3 rows**: `repeat(3, 200px)` - three 200px-high rows
-- **Named areas**:
-  - `hero`: spans columns 1-2, rows 1-2 (large top-left area)
-  - `feature1`: column 3, row 1 (top-right)
-  - `feature2`: column 3, row 2 (middle-right)
-  - `feature3`: column 3, row 3 (bottom-right)
-  - `wide`: spans columns 1-2, row 3 (bottom-wide area)
+This creates:
 
-### Live Example
-You can see this bento box layout in action by opening `index.html` in your browser. The layout demonstrates how `grid-template-areas` creates an asymmetrical, visually appealing design.
+- Three equal-width columns with `repeat(3, 1fr)`
+- Three fixed-height rows with `repeat(3, 200px)`
+- A hero area that spans two columns and two rows
+- Two stacked feature cards on the right
+- A wide content panel at the bottom left
 
-**HTML:**
+### Core HTML
+
 ```html
 <div class="bento-container">
   <div class="item item-1">Hero Image</div>
@@ -70,81 +83,16 @@ You can see this bento box layout in action by opening `index.html` in your brow
 </div>
 ```
 
-**CSS:**
-```css
-.bento-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 200px);
-  gap: 1rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  grid-template-areas:
-    "hero hero feature1"
-    "hero hero feature2"
-    "wide wide feature3";
-}
+### Responsive Behavior
 
-.item {
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-}
+On smaller screens, the bento layout switches to a single-column stack so each area remains readable and easy to scan.
 
-/* Assign areas */
-.item-1 {
-  grid-area: hero;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.item-2 {
-  grid-area: feature1;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.item-3 {
-  grid-area: feature2;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.item-4 {
-  grid-area: feature3;
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.item-5 {
-  grid-area: wide;
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-```
-
-### How It Works
-1. **Grid Definition**: `grid-template-columns: repeat(3, 1fr)` creates 3 equal columns
-2. **Area Layout**: 
-   - `hero` spans 2 columns and 2 rows (left side)
-   - `feature1`, `feature2`, `feature3` each take 1 column (right side)
-   - `wide` spans all 3 columns (bottom)
-3. **Visual Result**: An asymmetrical but balanced layout that showcases content hierarchy
-
-### Key Concepts Demonstrated
-- **Spanning**: Items can span multiple rows and columns
-- **Named Areas**: Makes the layout structure clear and easy to visualize
-- **Flexibility**: Easy to rearrange with media queries
-- **Hierarchy**: Larger areas draw attention to important content
-
-### Responsive Version
 ```css
 @media (max-width: 768px) {
   .bento-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    
+
     grid-template-areas:
       "hero"
       "feature1"
@@ -155,13 +103,68 @@ You can see this bento box layout in action by opening `index.html` in your brow
 }
 ```
 
-On mobile, all items stack vertically while maintaining their semantic areas.
+## Overlapping Grid Items
+
+This example uses explicit grid line coordinates instead of named areas:
+
+```css
+.item-6 {
+  grid-area: 1 / 1 / 3 / 3;
+  z-index: 2;
+}
+
+.item-7 {
+  grid-area: 1 / 3 / 3 / 5;
+  z-index: 1;
+}
+
+.item-8 {
+  grid-area: 2 / 2 / 4 / 4;
+  z-index: 3;
+}
+```
+
+Key concepts demonstrated:
+
+- Positioning with row and column grid lines
+- Spanning multiple rows and columns
+- Layering items with `z-index`
+- Creating depth and visual hierarchy inside a grid
+
+## Justify Items Example
+
+The justify-items demo focuses on alignment inside each grid cell:
+
+```css
+.justified-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: start;
+}
+
+.item-9,
+.item-10,
+.item-11 {
+  width: 50px;
+}
+```
+
+Because the items are narrower than their columns, `justify-items: start` makes the left alignment obvious.
+
+## Project Structure
+
+- `index.html`: main showcase page for the bento-box and overlapping-grid examples
+- `justified.html`: separate page dedicated to the `justify-items` example
+- `style.css`: shared layout, color, spacing, and responsive styles
+- `README.md`: documentation for the learning examples in this repository
 
 ## Resources
+
 - [MDN: grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
-- [CSS Tricks: Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [MDN: grid-area](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area)
+- [MDN: justify-items](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
+- [CSS-Tricks: A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Codecademy Advanced CSS Grid Lesson](https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-improved-styling-with-css/tracks/fecj-22-making-a-website-responsive/modules/wdcp-22-learn-css-grid-5f3cef21-7a34-415b-beef-3207850da2ce/lessons/advanced-css-grid/exercises/introduction)
-- [Adobe Color Wheel](https://color.adobe.com/) - Color harmony and palette generator
 
 ---
-Last updated: March 4, 2026
+Last updated: March 27, 2026

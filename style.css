@@ -4,7 +4,70 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background: linear-gradient(180deg, #f5f7fb 0%, #eef2f7 100%);
+    color: #1f2937;
+}
+
+.page-header,
+.page-content {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.page-header {
+    padding: 3rem 0 2rem;
+}
+
+.page-header h1 {
+    margin: 0 0 0.75rem;
+}
+
+.page-header p {
+    margin: 0;
+    max-width: 70ch;
+    line-height: 1.6;
+}
+
+.page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.page-nav a,
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background-color: #111827;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-content {
+    padding-bottom: 3rem;
+}
+
+.demo-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-heading {
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+    margin: 0 0 0.5rem;
+}
+
+.section-heading p {
+    margin: 0;
+    max-width: 70ch;
+    line-height: 1.6;
 }
 
 .bento-container {
@@ -32,14 +95,17 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: #111827;
+    min-height: 96px;
+    text-align: center;
+    padding: 1rem;
 }
 
 /* Assign areas */
 .item-1 {
     grid-area: hero;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.82) 0%, rgba(118, 75, 162, 0.82) 100%);
+    color: #ffffff;
 }
 
 .item-2 {
@@ -83,8 +149,7 @@ background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 1
     grid-template-rows: repeat(3, 200px);
     gap: 1rem;
     max-width: 1200px;
-    margin: 2rem auto;
-
+    margin: 0 auto;
 }
 
 .item-6 {
@@ -104,4 +169,55 @@ background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 1
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
     grid-area: 2 / 2 / 4 / 4; /* overlaps with Item 7 - Spans last two rows and middle two columns */
     z-index: 3;
+}
+
+/* Justify Items Example */
+.justified-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: solid 1px #ddd;
+    border-radius: 12px;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: start; /* Align each item to the start of its grid cell. */
+    justify-content: center; /* Center the entire grid within the container */
+}
+
+.item-9, .item-10, .item-11 {
+    width: 50px;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.demo-link {
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding-top: 2rem;
+    }
+
+    .page-nav {
+        flex-direction: column;
+    }
+
+    .page-nav a,
+    .demo-button {
+        width: 100%;
+    }
+
+    .overlapping-container,
+    .justified-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item-6,
+    .item-7,
+    .item-8 {
+        grid-area: auto;
+    }
 }
