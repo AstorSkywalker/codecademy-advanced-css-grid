@@ -34,7 +34,7 @@ The second demo uses line-based placement and `z-index` to show how grid items c
 
 ### 3. Justify Items Example
 
-The secondary page uses narrow child items to make the effect of `justify-items: start` clearly visible.
+The main page also includes a justify-items example that uses narrow child items to make the effect of `justify-items: start` clearly visible.
 
 ## Bento Box Layout
 
@@ -153,8 +153,7 @@ Because the items are narrower than their columns, `justify-items: start` makes 
 
 ## Project Structure
 
-- `index.html`: main showcase page for the bento-box and overlapping-grid examples
-- `justified.html`: separate page dedicated to the `justify-items` example
+- `index.html`: main showcase page for the bento-box, overlapping-grid, and justify-items examples
 - `style.css`: shared layout, color, spacing, and responsive styles
 - `README.md`: documentation for the learning examples in this repository
 

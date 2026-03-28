@@ -35,8 +35,7 @@ body {
     margin-top: 1.5rem;
 }
 
-.page-nav a,
-.demo-button {
+.page-nav a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -191,10 +190,6 @@ body {
     background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
 }
 
-.demo-link {
-    padding-bottom: 1rem;
-}
-
 @media (max-width: 768px) {
     .page-header {
         padding-top: 2rem;
@@ -204,8 +199,7 @@ body {
         flex-direction: column;
     }
 
-    .page-nav a,
-    .demo-button {
+    .page-nav a {
         width: 100%;
     }
 
@@ -220,4 +214,19 @@ body {
     .item-8 {
         grid-area: auto;
     }
+}
+
+/* Align Items Example */
+.aligned-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border: solid 1px #ddd;
+    border-radius: 12px;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: space-evenly; /* Align each item to the end of its grid cell. */
+    align-content: end; /* Center the entire grid within the container */
 }
